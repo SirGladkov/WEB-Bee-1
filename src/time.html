@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Internship</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .timer-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Навигация и логотип -->
+            <div class="HeaderUp">
+                <div class="HeaderUp-UserPages">
+                    <img src="./assets/Back Outline.svg"/>
+                    <p><b>User pages</b> - Profile</p>
+                </div>
+                <div class="HeaderUp-Navigathion">
+                    <span class="HeaderUp-Navigathion-IconText">
+                        <img src="./assets/Chart Outline.svg"/>
+                        Statistiks
+                    </span>
+                    <span class="HeaderUp-Navigathion-IconText">
+                        <img src="./assets/Calculate Outline.svg"/>
+                        Invoices
+                    </span>
+                    <span class="HeaderUp-Navigathion-IconText">
+                        <img src="./assets/Receipt Outline.svg"/>
+                        Schedule
+                    </span>
+                </div>
+            </div>
+            <div class="HeaderDown">
+                <nav class="HeaderDown-Left">
+                    <li>
+                        <a href="activity.html">
+                            <img src="./assets/Menu Outline.svg"/>
+                            <p>Activity</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="map.html">
+                            <img src="./assets/Location Outline.svg"/>
+                            <p>Map</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="time.html">
+                            <img src="./assets/Time Outline.svg"/>
+                            <p>Time</p>
+                        </a>
+                    </li>
+                </nav>
+                <nav class="HeaderDown-Right">
+                    <li>
+                        <a href="#Notes">
+                            <img src="./assets/Docs Outline.svg"/>
+                            <p>Notes</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Friends">
+                            <img src="./assets/People Outline.svg"/>
+                            <p>Friends</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Photos">
+                            <img src="./assets/Jpg Outline.svg"/>
+                            <p>Photos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Settinges">
+                            <img src="./assets/Settings Outline.svg"/>
+                            <img src="./assets/Small Arrow Down Outline.svg"/>
+                        </a>
+                    </li>
+                </nav>
+
+            </div>
+    </header>
+    <main class="Main">
+    <!-- Главный контент -->
+    <div class="time-container">
+        <div class="time-container-header"> 
+            <p>Timer</p>
+            <div>
+                <img src="./assets/Chevron Down Outline.svg"/>
+                <img src="./assets/Update Outline.svg"/>
+                <img src="./assets/Close Outline.svg"/>
+            </div>
+        </div>
+        <div class="time-container-body">
+            <div class="timer" id="timer">00:00:00</div>
+        </div>
+
+
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Internship</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключение Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        /* Переопределение стилей Leaflet */
+        #map {
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Навигация и логотип -->
+            <div class="HeaderUp">
+                <div class="HeaderUp-UserPages">
+                    <img src="./assets/Back Outline.svg"/>
+                     <p><b>User pages</b> - Profile</p>   
+                </div>
+                <div class="HeaderUp-Navigathion">
+                    <span class="HeaderUp-Navigathion-IconText">
+                        <img src="./assets/Chart Outline.svg"/>
+                        Statistiks
+                    </span>
+                    <span class="HeaderUp-Navigathion-IconText">
+                        <img src="./assets/Calculate Outline.svg"/>
+                        Invoices
+                    </span>
+                    <span class="HeaderUp-Navigathion-IconText">
+                        <img src="./assets/Receipt Outline.svg"/>
+                        Schedule
+                    </span>
+                </div>
+            </div>
+            <div class="HeaderDown">
+                <nav class="HeaderDown-Left">
+                    <li>
+                        <a href="activity.html">
+                            <img src="./assets/Menu Outline.svg"/>
+                            <p>Activity</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="map.html">
+                            <img src="./assets/Location Outline.svg"/>
+                            <p>Map</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="time.html">
+                            <img src="./assets/Time Outline.svg"/>
+                            <p>Time</p>
+                        </a>
+                    </li>
+                </nav>
+                <nav class="HeaderDown-Right">
+                    <li id="Notes">
+                        <a href="#Notes">
+                            <img src="./assets/Docs Outline.svg"/>
+                            <p>Notes</p>
+                        </a>
+                    </li>
+                    <li id="Friends">
+                        <a href="#Friends">
+                            <img src="./assets/People Outline.svg"/>
+                            <p>Friends</p>
+                        </a>
+                    </li>
+                    <li id="Photos">
+                        <a href="#Photos">
+                            <img src="./assets/Jpg Outline.svg"/>
+                            <p>Photos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Settinges">
+                            <img src="./assets/Settings Outline.svg"/>
+                            <img src="./assets/Small Arrow Down Outline.svg"/>
+                        </a>
+                    </li>
+                </nav>
+
+            </div>
+    </header>
+    <main class="Main">
+        <div class="map-container">
+            <div class="map-container-header"> 
+                <p>Basic map</p>
+                <div>
+                    <img src="./assets/Chevron Down Outline.svg"/>
+                    <img src="./assets/Update Outline.svg"/>
+                    <img src="./assets/Close Outline.svg"/>
+                </div>
+            </div>
+            <div class="map-container-body">
+                <button class="map-button" id="showMapButton"></button>
+                <div id="map" class="map"></div>
+            </div>
+        </div>
+    </main>
+        <!-- Подключение Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="main.js"></script>
+    <footer>
+        <!-- Подвал -->
+    </footer>
+</body>
+</html>

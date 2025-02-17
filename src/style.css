@@ -1,0 +1,582 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F1F1;
+    size: 18px;
+    color: #505050
+}
+
+li {
+    display: block;
+  }
+
+Header{
+    width: 100%;
+    min-width: 812px;
+  }
+
+.HeaderUp {
+    height: 64px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 0;
+}
+
+.HeaderUp-UserPages {
+    display: flex;
+    padding: 32px 20px;
+    gap: 8px;
+    font-size: 18px;
+    align-items: center;
+}
+
+.HeaderUp-User-Img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-size: cover; /* Масштабирует изображение, чтобы оно покрывало весь блок */
+    background-repeat: no-repeat; 
+    display: none;
+}
+
+.HeaderUp-Navigathion{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 8px 32px;
+}
+
+.HeaderUp-Navigathion-IconText {
+    height: 48px;
+    width: 56px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+.HeaderUp-Navigathion-IconText img {
+    width: 24px;
+    height: 24px; 
+    margin-bottom: 8px; 
+}
+
+.HeaderDown {
+    background-color: #FAFAFA;
+    height: 40px;
+    top: 60px;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.HeaderDown-Left {
+    display: flex;
+    margin-left: 32px;
+}
+
+.HeaderDown-Right {
+    display: flex;
+    margin-right: 32px;
+}
+
+.HeaderDown-Left li, .HeaderDown-Right li{
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    cursor: pointer;
+    
+}
+
+
+.HeaderDown-Left a, .HeaderDown-Right a {
+    text-decoration: none; 
+    color: inherit; 
+    width: 100%; 
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px 0 16px;
+    height: 40px;
+}
+
+.HeaderDown-Left a:hover, .HeaderDown-Right a:hover {
+    background-color: #F1F1F1; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.HeaderDown-Left li img, .HeaderDown-Right li img {
+    width: 24px; 
+    height: 24px; 
+}
+
+.HeaderDown-Left a.active, .HeaderDown-Right a.active {
+    background-color: #F1F1F1; 
+    font-weight: bold;
+}
+
+
+.Main {
+    display: flex;
+    justify-content: center;
+}
+
+.MainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    padding: 32px;
+    max-width: 1080px;
+    box-sizing: border-box;
+}
+
+.MainContent-now {
+    background-color: #FFFFFF;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.MainContent-now-Item {
+    padding: 56px 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.MainContent-now-Item img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+}
+
+.MainContent-now-Item-User {
+    display: flex;
+    align-items: center;
+}
+
+.MainContent-now-Item-User span {
+    font-size: 14px;
+}
+
+.MainContent-now-Item-User img {
+    width: 24px;
+    height: 24px;
+}
+
+.MainContent-now-Item-User a {
+    text-decoration: none;
+    color: #5095EC;
+    transition: color 0.3s ease;
+}
+
+.MainContent-now-Item-User a:hover {
+    text-decoration: underline;
+    color: #007BFF;
+}
+
+.MainContent-now-Item-Text {
+    font-size: 14px;
+    border-left: solid;
+    border-left-color: #D3D8DE;
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-wrap: wrap;
+    white-space: normal; /* Восстанавливаем перенос текста */
+}
+
+.MainContent-now-Item-Text p {
+    margin: 0;
+}
+
+.MainContent-now-Item-Icon {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.MainContent-now-Item-Icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.MainContent-now-Item-Icon span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.MainContent-old {
+    background-color: #FFFFFF;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 32px 0px 32px;
+    flex-wrap: nowrap;
+}
+
+.MainContent-old p {
+    margin: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Применяем только к тексту внутри .MainContent-old */
+    max-width: 770px;
+}
+
+.MainContent-old-TimeAgo {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.MainProfile p{
+    height: 0px;
+}
+
+.MainProfile {
+    height: 862px;
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    width: 264px;
+    margin-top: 32px;
+    margin-right: 32px;
+}
+
+.MainProfile-User {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 66px;
+    box-sizing: border-box;
+    gap: 16px;
+}
+
+.MainProfile-User-Img {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background-size: cover; /* Масштабирует изображение, чтобы оно покрывало весь блок */
+    background-repeat: no-repeat; /* Предотвращает повторение изображения */
+}
+
+.MainProfile-User-Context{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MainProfile-User span{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.MainProfile-User span img{
+    width: 24px;
+    height: 24px;
+}
+
+.MainProfile-Navigation {
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.MainProfile-Navigation ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Расстояние между элементами навигации */
+}
+
+.MainProfile-Navigation ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.MainProfile-Navigation ul li img {
+    width: 24px;
+    height: 24px;
+}
+
+.MainProfile-Navigation ul li a {
+    text-decoration: none;
+    color: #505050;
+    transition: color 0.3s ease;
+}
+
+.MainProfile-Navigation ul li a:hover {
+    color: #5095EC; /* Цвет ссылки при наведении */
+}
+
+.MainProfile-Navigation-Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: solid 1px;
+    border-bottom-color: #D3D8DE;
+}
+
+.MainProfile-Navigation-Header span {
+    color: #505050;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.MainProfile-Navigation-Body{
+    padding: 0px 16px;
+    border-bottom: solid 1px;
+    border-bottom-color: #D3D8DE;
+}
+
+.MainProfile-Navigation-Body ul li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.MainProfile-Navigation-Body ul li div{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.MainProfile-Navigation-Footer{
+    padding: 16px;
+}
+
+.MainProfile-Navigation-Footer ul li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.MainProfile-Navigation-Footer ul li div{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.MainProfile-Share {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.MainProfile-Share-Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: solid 1px;
+    border-bottom-color: #D3D8DE;
+}
+
+.MainProfile-Share-Header span {
+    color: #505050;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.MainProfile-Share-Body {
+    display: flex;
+    justify-content: center;
+    padding: 0px 16px;
+}
+
+.MainProfile-Share-Body input{
+    border: solid 1px;
+    border-color: #D3D8DE;
+    min-height: 88px;
+    min-width: 232px;
+    border-radius: 5px;
+    padding: 0px 8px 60px 8px;
+    box-sizing: border-box; /* Включаем отступы и границы в ширину элемента */
+}
+
+.MainProfile-Share-Footer {
+    display: flex;
+    justify-content: center;
+    padding: 0px 16px 16px 16px;
+}
+
+.MainProfile-Share-Footer button{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #5095EC;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+    width: 232px;
+    height: 32px;
+    cursor: pointer;
+    transition: background-color 0.3s ease ;  /* Добавляем плавный переход */
+}
+
+.MainProfile-Share-Footer button:hover {
+    background-color: #D3D8DE ; /* Цвет кнопки при наведении */
+}
+
+.map-container {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 32px;
+    max-width: 1376px;
+}
+
+.map-container-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 32px;
+    box-sizing: border-box;
+}
+
+.map-container-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+    margin: 0px 32px 32px 32px;
+}
+    
+
+.map-button {
+    width: 200px;
+    height: 200px;
+    background-image: url('./assets/Union.svg'); /* Путь к иконке перезагрузки */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: white;
+}
+
+.map-button:hover {
+    width: 210px;
+    height: 210px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.time-container{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 32px;
+    max-width: 1376px;
+}
+.time-container-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 32px;
+    box-sizing: border-box;
+}
+
+.time-container-body{
+    display: flex;
+    align-items: center;
+    margin: 32px;
+}
+
+@media (max-width: 1200px) {
+    .Main {
+        flex-direction: column-reverse;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .MainProfile {
+        display: flex;
+        margin: 0px;
+        height: auto;
+        padding: 32px;
+        max-width: 1024px;
+    }
+    .MainProfile-Navigation {
+        display: none;
+    }
+    .MainProfile-Share {
+        display: none;
+    }
+    .MainProfile-User{
+        display: none;
+    }
+    .HeaderUp-User-Img{
+        display: block;
+    }
+}
+@media (max-width: 800px) {
+    Header{
+        width: 100%;
+        min-width: 410px;
+    }
+            
+}
+@media (max-width: 770px) {
+
+    .HeaderDown{
+        overflow: scroll;
+    }
+    .HeaderDown-Right{
+        margin: 0;
+    }
+    .HeaderDown-Left{
+        margin: 0;
+    }
+    
+}
+@media (max-width: 590px) {
+
+    .HeaderUp-UserPages p{
+        display: none;
+    }
+    .HeaderUp-UserPages img{
+        height: 50px;
+        width: 50px;
+    }
+    .HeaderUp-UserPages{
+        padding: 0px 0px 0px 16px;
+    }
+    
+}
+
+@media (max-width: 410px) {
+
+    .Main{
+        min-width: 410px;
+    }
+    
+}
