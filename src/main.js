@@ -48,10 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function setActiveMenuItem() {
     const links = document.querySelectorAll('.HeaderDown a');
     const currentPath = window.location.pathname.split('/').pop(); // Получаем имя файла из пути
-
     links.forEach(link => {
         const linkPath = link.getAttribute('href').split('/').pop(); // Получаем имя файла из ссылки
-
         // Проверяем, соответствует ли текущий путь пути ссылки
         if (currentPath === linkPath) {
             link.classList.add('active');
@@ -95,11 +93,11 @@ async function loadContent(url) {
         document.querySelector('.Main').innerHTML = content;
 
         // Удаляем существующие скрипты
-        const scripts = document.querySelectorAll('.content script');
+        const scripts = document.querySelectorAll('.Main script');
         scripts.forEach(script => script.remove());
 
         // Добавляем новые скрипты
-        const newScripts = doc.querySelectorAll('.content script');
+        const newScripts = doc.querySelectorAll('.Main script');
         newScripts.forEach(script => {
             const newScript = document.createElement('script');
             newScript.src = script.src;
@@ -110,10 +108,13 @@ async function loadContent(url) {
         if (url === 'time.html') {
             displayTimer();
             updateTimerDisplay();
+        } else {
+            // Скрываем карту и очищаем её при переходе на другие страницы
+            hideAndResetMap();
         }
+
         // Добавляем обработчик событий для кнопки showMapButton
         addMapButtonListener();
-        
     } catch (error) {
         console.error('Error loading content:', error);
     }
@@ -174,12 +175,42 @@ function addMapButtonListener() {
 }
 
 // Функция для карты
-function initMap() {
+async function initMap() {
     if (!window.mapInitialized) {
+        // Проверяем, загружена ли библиотека Leaflet
+        if (typeof L === 'undefined') {
+            await loadLeaflet();
+        }
         var map = L.map('map').setView([55.755826, 37.6173], 10); // Координаты Москвы
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
         window.mapInitialized = true;
+    }
+}
+
+// Функция для динамической загрузки библиотеки Leaflet
+function loadLeaflet() {
+    return new Promise((resolve, reject) => {
+        const leafletCss = document.createElement('link');
+        leafletCss.rel = 'stylesheet';
+        leafletCss.href = 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
+        document.head.appendChild(leafletCss);
+
+        const leafletJs = document.createElement('script');
+        leafletJs.src = 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.js';
+        leafletJs.onload = resolve;
+        leafletJs.onerror = reject;
+        document.head.appendChild(leafletJs);
+    });
+}
+
+// Функция для скрытия и очистки карты
+function hideAndResetMap() {
+    const mapContainer = document.getElementById('map');
+    if (mapContainer) {
+        mapContainer.style.display = 'none';
+        mapContainer.innerHTML = ''; // Очищаем содержимое карты
+        window.mapInitialized = false; // Сбрасываем флаг инициализации карты
     }
 }
